@@ -1,14 +1,29 @@
 import { useState } from "react";
 
-export default function AuthorCard({ name }) {
+export default function AuthorCard({ id, name }) {
   const [subscribed, setSubscribed] = useState(false);
 
-  function handleSubscribe() {
-    setSubscribed(true);
+  async function handleSubscribe() {
+    // verify requester via token
+    const csrfToken = document
+      .querySelector('meta[name="csrf-token"]')
+      .content;
 
-    setTimeout(() => {
-      setSubscribed(false);
-    }, 2000)
+    // send petition
+    const response = await fetch(`/authors/${id}/subscribe`, {
+      method: "POST",
+      headers: {
+        "X-CSRF-Token": csrfToken
+      }
+    });
+
+    const data = await response.json();
+    console.log(data);
+    // setSubscribed(true);
+
+    // setTimeout(() => {
+    //   setSubscribed(false);
+    // }, 2000)
   }
 
   return (
