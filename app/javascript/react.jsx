@@ -1,9 +1,11 @@
-import React from "react"
-import { createRoot } from 'react-dom/client';
+import React from "react";
+import { createRoot } from "react-dom/client";
+import AuthorsGrid from "./components/AuthorsGrid";
 
-// Clear the existing HTML content
-document.body.innerHTML = '<div id="app"></div>';
+const container = document.getElementById("authors-grid");
+const authors = JSON.parse(
+  container.dataset.authors
+);
 
-// Render your React component instead
-const root = createRoot(document.getElementById('app'));
-root.render(<h1>Hello, world</h1>);
+const root = createRoot(container);
+root.render(<AuthorsGrid authors={authors} />);
