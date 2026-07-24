@@ -21,4 +21,10 @@
 
 .author-card button {
   width: 100%;
+  transition: all .35s ease;
+}
+
+.author-card button.subscribed {
+  opacity: .5;
+  transform: scale(.96);
 }
