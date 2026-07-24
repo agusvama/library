@@ -1,6 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import AuthorsGrid from "./components/AuthorsGrid";
+import App from "./components/App";
 
 const container = document.getElementById("authors-grid");
 const authors = JSON.parse(
@@ -8,4 +8,4 @@ const authors = JSON.parse(
 );
 
 const root = createRoot(container);
-root.render(<AuthorsGrid authors={authors} />);
+root.render(<App authors={authors} />);

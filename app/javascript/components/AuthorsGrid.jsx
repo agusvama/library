@@ -6,6 +6,7 @@ export default function AuthorsGrid({ authors }) {
       {authors.map(author => (
         <AuthorCard
           key={author.id}
+          id={author.id}
           name={author.name}
         />
       ))}
