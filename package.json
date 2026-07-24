@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "scripts": {
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets --jsx=automatic"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.1"
+  }
+}
